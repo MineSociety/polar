@@ -26,6 +26,10 @@ public interface ChunkSelector {
         };
     }
 
+    static @NotNull ChunkSelector square(int minX, int maxX, int minZ, int maxZ) {
+        return (x, z) -> (x >= minX && x <= maxX) && (z >= minZ && z <= maxZ);
+    }
+
     boolean test(int x, int z);
 
 }
